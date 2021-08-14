@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+/* Section Navbar */
+
+section#Navbar{
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)), url('images/banner.png');
+    background-position: center;
+    background-size: cover;
+    height: 80%;
+}
+
+#navbarNavAltMarkup{
+    background-color: #72748338;
+    border-radius: 10px;
+    width: 0%;
+}
+
+a.nav-item{
+    color: cornsilk;
+    font-size: 18px;
+}
+
+a.nav-item:hover{
+    color:#f36963 ;
+}
+.navbar-nav a{
+    margin: 2px
+}
+
+div .active{
+    color: #f36963;
+    
+}
+
+/* div#navbarNavAltMarkup.navbar-collapse.collapse.show{
+     
+} */
+
+/* Section Introduction */
+
+div.flex{
+    position: relative;
+    top: -170px;
+    margin: 35px;
+    
+}
+.flex img{
+    width: 100%;
+    border-radius: 2px;
+    box-shadow:0px 0px 8px 8px rgba(0, 0, 0, 0.1);
+}
+.flex h2{
+    font-size: 25px;
+    font-weight: 700;
+    color: #f36963;
+}
+.flex p {
+    font-size: 20px;
+    color: cornsilk;
+}
+
+/* About Me */
+
+section#about{
+    position: relative;
+    top: -140px;
+}
+
+#about .col-md-6{
+    padding: 15px;
+}
+
+
+
+
+
