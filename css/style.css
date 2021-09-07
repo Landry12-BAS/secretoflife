@@ -6,6 +6,7 @@ html,*{
 	padding: 0;
 	margin: 0;
     scroll-behavior: smooth;
+    box-sizing: border-box;
 }
 
 body {
@@ -19,24 +20,20 @@ body {
 	color: #d0d2dd;
 	font-size: 35px;
 	margin-right: 15px;
+    cursor: pointer;
 	animation: mymove 2.3s;
 	animation-fill-mode: forwards;
 }
 
  @keyframes mymove {
 	from {top: -35px;}
-	to {top: 13px;}
-  }  
-
-
+	to {top: -2px;}
+}  
 a, a:hover{
 	color: #ef7860;
 }
 li span:hover{
 	color: #ef7860;
-}
-.rec{
-    color: #fff;
 }
 
 .header nav {
@@ -44,18 +41,31 @@ li span:hover{
 }
 
 .header{
-	background: linear-gradient(rgba(0, 0, 0, 0.623),rgba(0, 0, 0, 0)), url(../images/banner.png);
+    top: 0;
+	background: linear-gradient(rgba(0, 0, 0, 0.185),rgba(0, 0, 0, 0)), url(../images/ban.png);
 	background-position: center;
 	background-size: cover;
+    background-attachment: fixed;
 	width: 100%;
-	height:333px;
-	position: relative;
+	height: 50px;
+	position:fixed;
+}
+
+div.banner img{
+    width: 100%;
+    height: 570px;
+    object-fit: cover;
+    background-attachment: fixed;
+    border-bottom-left-radius: 150px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 0 0 20px 7px rgba(0, 0, 0, 0.2);
+
 }
 
 .header a {
 	display: block;
 	width: 28px;
-	height: 18px;
+	height: 38px;
 	padding: 11px;
 	margin-left: 5px;
     padding-top: 15px;
@@ -71,40 +81,50 @@ li span:hover{
 	width: 20px;
 	box-shadow: 0 0 20px 7px rgba(0, 0, 0, 0.2);
 	border-radius:1px;
+    position: relative;
 }
 .header a span {
-	background: #fff;
+    position: relative;
+	background: rgb(255, 255, 255);
 	display: block;
 	height: 2px;
 	width: 20px;
 	margin: 6px 0;
 	box-shadow: 0 0 20px 7px rgba(0, 0, 0, 0.2);	
-	border-radius:3px;
+	border-radius:1px;
 }
 
 /*-------------------- Arrow scroll up -------------------*/
 .arrow{
 	position:fixed;
-	bottom: 15px;
-	right: 30px;
+	bottom: 26px;
+	right: 20px;
 	z-index: 9;
 }
 .arrow a{
-	height: 39px;
-	width: 35px;
+	height: 34px;
+	width: 32px;
 	text-align: center;
 	background: #1b1b1b46;
 	display: block;
-	border-radius: 5px;
+	border-radius:4px;
 }
-.arrow a span{
-	color: #fff;
-	font-size: 25px;
-	line-height: 35px;
+.arrow a span img{
+	/* line-height: 35px; */
 	cursor: pointer;
+    padding-top: 3px;
+
 }
-
-
+.arrow a:hover{
+    background: #ef786062;
+    transition: step-start;
+}
+.arrow ,a::after{
+    position: none;
+}
+.arrow ,a::before{
+    position: fixed;
+}
 
 /*- --------------------Intro---------------------- */
 
@@ -203,17 +223,83 @@ div.vertical-line p {
 
 /*---------------------------Second About3----------------------------*/
 
-/*------------------------- Section Footer -------------------------------*/
-
-footer{
-    position: none;
-    bottom: 0px;
+section#cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    /* background-attachment: fixed; */
+}
+.container{
     width: 100%;
-    
+    height: auto;
+    margin: 0px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    grid-gap: 20px;
+    padding: 20px;   
 }
 
+.container .box{
+    /* position: relative; */
+    background: rgba(18, 26, 36, 0.418);
+    padding: 20px 40px 40px;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.container .box p{
+    color: #fff;
+}
+
+.container .box a{
+    color: #d0d2dd;
+    text-decoration: none;
+    font-size: 17px;
+    padding: 6px 16px;
+    border-radius: var(--mm-ocd-min-width);
+    background: black;
+}
+
+.box .er:hover{
+    
+    /* background: #29292957; */
+    border-radius:10px ;
+    cursor: pointer;
+    transform: scale(1.03);
+    transition: all 1s ease;
+    position: none;
+}
+
+.container .box:nth-child(1){
+    background: linear-gradient(195deg, #fc063b, #d7da46, #03091d );
+}
+ .container .box:nth-child(2){
+    background: linear-gradient(45deg, #349dff, #000000);
+}
+.container .box:nth-child(3){
+    background: linear-gradient(45deg, #7c9273, #000000);
+}
+.container .box:nth-child(4){
+    background: linear-gradient(95deg, #465586, #020a00);
+}
+
+.container .box h1{
+    font-size: 40px;
+    color: #fff;
+    text-shadow :0 0 20px 7px rgba(0, 0, 0, 0.2);
+}
+.container .box img{
+    width: 100%; 
+    height: 300px; 
+    border-radius: 10px;
+}
+
+/*------------------------- Section Footer -------------------------------*/
+
 .foo-ter{
-    padding-top: 50px;
+    padding-top: 80px;
 }
 
 .main-content{
@@ -232,61 +318,63 @@ footer{
 }
 .box .content{
     margin: 20px 0 0 0;
-    position: relative;
+    /* position: relative; */
 }
 .box .content:before{
-    position: absolute;
+    /* position: absolute; */
     content: '';
     top: -10px;
-    height: 2px;
-    width: 100%;
-    background: #1a1a1a;
 }
 .box .content:after{
-    position: absolute;
+    /* position: absolute; */
     content: '';
-    height: 2px;
-    width: 15%;
-    background: #ef7860;
     top: -10px;
 }
 .left .content p{
     text-align: justify;
+
+}
+.box div.trait{
+   margin-top: 5px;
+}
+.box .trait{
+    padding: 2px 6px;
+    background: linear-gradient(45deg, #ef7860, #02ee0d);
+    width: 95%;
+    border-radius: 6px;
+
 }
 .left .content .social{
     margin: 20px 0 0 0;
 }
 .left .content .social a{
-    padding: 0 2px;
+    padding: 0 6px;
 }
 
-.left .content .social a span{
-    height: 40px;
-    width: 40px;
-    background: #fff;
+.left .content .social a span img{
+    width: 32px;
     line-height: 40px;
-    text-align: center;
-    font-size: 18px;
-    border-radius: 5px;
     transition: 0.3s;
-    color: black; 
 }
-.left .content .social a span:hover{
-    background: #ef7860;
+.left .content .social a span img:hover{
+    background: #dbdbdb91;
+    border-radius: 5px;
 }
-.center .content .fas{
-    font-size: 1.4375rem;
-    height: 45px;
-    width: 45px;
-    line-height: 45px;
-    text-align: center;
-    border-radius: 50%;
-    transition: 0.2s;
-    cursor: pointer;
+.center .content a img{
+    position: relative;
+    width: 40px;
+    padding: 6px 8px;
+    transition: 0.3s;
 }
 
-.center .content .fas:hover{
-    background: #ef7860;
+.center .content span.text{
+    position: relative;
+    top: -12px;
+}
+
+.center .content img:hover{
+    background: #dbdbdb91;
+    border-radius: 5px;
 }
 .center .content .text{
     font-size: 1.0625rem;
@@ -297,23 +385,27 @@ footer{
     padding: 6px 0;
 }
 
+/* contact */
+
 div.bottom {
     font-size: 0.9675rem;
     width: 100%;
-    background-color:#1b1b1b46;
-	height:35px;
+    background:linear-gradient(202deg, #ff3c00, #c9c926, #ffffff );
+	height:80px;
 }
-.bottom a, span{
-    color: black;
-}
-
 .credit a{
     text-decoration: none;
     color: black;
     font-size: 0.9675rem;
+   
 }
 
-
+.credit a:hover{
+    cursor: pointer;
+    color: #ef7860;
+    transform: 1.3s;
+    transition: all 1.3s ease;
+}
 
 @media only screen and (max-width: 768px) {
 
@@ -323,6 +415,10 @@ div.bottom {
 		margin-right: 10px;
 		padding-top: 0px;
 	}
+    @keyframes mymove {
+        from {top: -35px;}
+        to {top: 8px;}
+      }
 
 	.intro{
 		width: 90%;
@@ -338,6 +434,12 @@ div.bottom {
 	section.intro1{
 		top: 25px;
 	}
+
+/* arrow */
+.arrow{
+	bottom: 43px;
+
+}
 
 	.section {
         padding-left: 20px;
@@ -366,23 +468,27 @@ div.bottom {
         padding-left: 0px;
         margin-top: 20px;
     }
-
-	footer{
-        position: relative;
-      }
-      .main-content{
+   
+    .main-content{
         flex-wrap: nowrap;
         flex-direction: column;
       }
       .main-content .box{
         margin: 5px 0;
       } 
-      div.bottom {
-        width: 100%;
-        height:47px;
-    }
+
+      div.main-content h2{
+          font-size: 25px;
+      }
+   
     div.center.box span.text{
-        font-size: 14px;
+        font-size: 13px;
+    }
+
+    div.banner img{
+        object-fit:cover;
+        width: 100%;
+        height: 50vh;
     }
 
 }
