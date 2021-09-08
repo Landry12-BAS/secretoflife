@@ -5,8 +5,8 @@
 html,*{
 	padding: 0;
 	margin: 0;
-    scroll-behavior: smooth;
-    box-sizing: border-box;
+   	scroll-behavior: smooth;
+    	box-sizing: border-box;
 }
 
 body {
@@ -20,7 +20,7 @@ body {
 	color: #d0d2dd;
 	font-size: 35px;
 	margin-right: 15px;
-    cursor: pointer;
+    	cursor: pointer;
 	animation: mymove 2.3s;
 	animation-fill-mode: forwards;
 }
@@ -41,11 +41,11 @@ li span:hover{
 }
 
 .header{
-    top: 0;
+    	top: 0;
 	background: linear-gradient(rgba(0, 0, 0, 0.185),rgba(0, 0, 0, 0)), url(../images/ban.png);
 	background-position: center;
 	background-size: cover;
-    background-attachment: fixed;
+    	background-attachment: fixed;
 	width: 100%;
 	height: 50px;
 	position:fixed;
@@ -409,6 +409,10 @@ div.bottom {
 
 @media only screen and (max-width: 768px) {
 
+	html{
+		scroll-behavior: smooth;
+	}
+	
 	#dropdown h2{
 		color:#cccfdb;
 		font-size: 20px;
